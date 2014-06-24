@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+#wrapper {
+    width: 100%;
+    margin: auto auto;
+    font-size: 1em;
+    max-width: 900px;
+    font-family: PT Sans;
+    background: #FFF;
+}
+
+h1 {
+    margin-bottom: -10px;
+}
+
+section p {
+    float: right;
+    margin-top: 100px;
+    width: 300px;
+}
+
+section p span {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+section canvas {
+    float: left;
+    width: 545px;
+}
+
+article p {
+    width: 900px;
+    text-align: justify;
+    float: left;
+    padding-top: 50px;
+}
+
+article p span {
+    display: block;
+    width: 900px;
+    background: #e3e3e3;
+    padding: 10px 0 10px 10px;
+    font-weight: 800;
+    margin-top: 20px;
+}
