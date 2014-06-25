@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Google Maps Marker Drag&Drop :: Dynamic Web Cookbook by Labs64</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/main.css"/>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</head>
+<body>
+<div id="wrapper">
+    <h1>Working with Google Maps – Marker Drag&Drop</h1>
+    <section>
+        <p>
+
+        <div id="gmap-canvas"></div>
+        <br/>
+
+        <p>Drag&drop the marker to the selected location or search for the address.</p>
+
+        <label for="latitude">Latitude:</label>
+        <input id="latitude" type="text" value=""/>
+        <br/>
+        <label for="longitude">Longitude:</label>
+        <input id="longitude" type="text" value=""/>
+        <br/>
+        <label for="address">Search address:</label>
+        <input id="address" type="text" value="Germany">
+        <input id="btnAddress" type="button" value="Search" onclick="addressChanged();">
+        <script type="text/javascript" src="js/gmap.js"></script>
+    </section>
+</div>
+</body>
+</html>

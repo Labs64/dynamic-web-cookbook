@@ -15,7 +15,6 @@ h1 {
 
 section p {
     float: right;
-    margin-top: 100px;
     width: 300px;
 }
 
@@ -24,7 +23,7 @@ section p span {
     text-transform: uppercase;
 }
 
-section canvas {
-    float: left;
-    width: 545px;
+#gmap-canvas {
+    width: 100%;
+    height: 400px;
 }
