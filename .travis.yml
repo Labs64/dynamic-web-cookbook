@@ -1,1 +1,4 @@
-script: ./scripts/validate-maps-munich-sportive
+language: c
+
+script:
+  ./scripts/validate-maps-munich-sportive
