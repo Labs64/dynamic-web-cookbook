@@ -1,6 +1,6 @@
 #!/bin/sh
 
-result=$(curl -X POST --data @munich-sportive.geojson $data http://geojsonlint.com/validate 2>/dev/null)
+result=$(curl -X POST --data @maps-munich-sportive/munich-sportive.geojson $data http://geojsonlint.com/validate 2>/dev/null)
 
 if [ "$result" = "{\"status\": \"ok\"}" ]; then
   echo "geoJSON is valid"
