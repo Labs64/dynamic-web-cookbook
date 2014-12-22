@@ -10,6 +10,7 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+
             $("#parseButton").click(function () {
                 var content = "";
                 var inputString = $("#inputString").val();
@@ -37,6 +38,10 @@
 
                 $("#result").show();
             });
+
+            $("#inputString").val(window.location.href);
+
+            $("#parseButton").click();
         });
 
     </script>
@@ -49,7 +54,7 @@
             <form id="form" enctype="multipart/form-data" method="post" action="/index.html">
 
                 <label for="inputString">Copy/Paste your URL here:</label>
-                <input type="text" id="inputString" name="inputString" style="height:18px;width: 300px;"/>
+                <input type="text" id="inputString" name="inputString" style="height:18px;width: 700px;"/>
 
                 <div class="buttons">
                     <button class="btn primary" id="parseButton" title="Parse the URL and split the query string"
