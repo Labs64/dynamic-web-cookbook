@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Query String Splitter :: Dynamic Web Cookbook by Labs64</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.querystring.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#parseButton").click(function () {
+                var content = "";
+                var inputString = $("#inputString").val();
+                $.each($.querystring(inputString), function (i, n) {
+                    if ($.isArray(n)) {
+                        var key = $('<div/>').text(i).html();
+                        for (var j = 0; j < n.length; j++) {
+                            var value = $('<div/>').text(n[j]).html();
+                            content += '<tr><td class="p"><span class="sp">\'' + key + '\'[' + j + ']:<span></td><td class="v">' + value + '</td></tr>';
+                        }
+                    } else {
+                        var key = $('<div/>').text(i).html();
+                        var value = $('<div/>').text(n).html();
+                        content += '<tr><td class="p"><span class="sp">\'' + key + '\':<span></td><td class="v">' + value + '</td></tr>';
+                    }
+                });
+
+                $("#queryString").html(content);
+
+                if (content != "") {
+                    $("#queryStringWrapper").show();
+                } else {
+                    $("#queryStringWrapper").hide();
+                }
+
+                $("#result").show();
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <h1>Query String Splitter</h1>
+    <section>
+        <div class="form-wrapper">
+            <form id="form" enctype="multipart/form-data" method="post" action="/index.html">
+
+                <label for="inputString">Copy/Paste your URL here:</label>
+                <input type="text" id="inputString" name="inputString" style="height:18px;width: 300px;"/>
+
+                <div class="buttons">
+                    <button class="btn primary" id="parseButton" title="Parse the URL and split the query string"
+                            onclick="return false;">PARSE
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="result" style="display:none;">
+            <div id="queryStringWrapper">
+                <h2>Query String Parts</h2>
+                <table id="queryString"/>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
